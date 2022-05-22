@@ -27,7 +27,8 @@ function EventModal({ modalOpen, setModalOpen}) {
               username,
               tel,
               email,
-              status 
+              status,
+              time: new Date().toLocaleString(),
             })
           );
           toast.success('Attendence added successfully');

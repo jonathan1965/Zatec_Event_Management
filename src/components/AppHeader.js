@@ -4,7 +4,7 @@ import EventModal from './EventModal';
 import styles from '../styles/modules/app.module.scss'
 
 function AppHeader() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   
   return (
     <div>
