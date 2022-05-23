@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion} from 'framer-motion'
+import {motion, useMotionValue, useTransform} from 'framer-motion'
 import styles from '../styles/modules/eventItem.module.scss';
 
 
@@ -11,16 +11,27 @@ const checkVariants = {
     unchecked: { pathLength: 0 },
   };
   
+  const boxVariants = {
+    checked: {
+      background: 'var(--primaryGreen)',
+      transition: { duration: 0.1 },
+    },
+    unchecked: { background: 'var(--gray-2)', transition: { duration: 0.1 } },
+  };
+  
 
 function CheckButton({ checked, setChecked}) {
- 
-  return (
+const pathLength =  useMotionValue(0);
+const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
+
+ return (
     <motion.div
       className={styles.svgBox}
-      variants={checkVariants}
+      variants={boxVariants}
       animate={checked ? 'checked' : 'unchecked'}
       onClick={()=> {
-          console.log('checked clicked')
+          setChecked(!checked);
+          
       }}
 
     >
@@ -31,6 +42,9 @@ function CheckButton({ checked, setChecked}) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
+          variants={checkVariants}
+          animate={checked ? 'checked' : 'unchecked'}
+          style={{ pathLength, opacity }}
           fill="none"
           strokeMiterlimit="10"
           strokeWidth="6"
