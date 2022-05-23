@@ -17,7 +17,7 @@ function AppHeader() {
         <option value="Not Attend">Not Attend</option>
         </SelectButton>
      </div>
-     <EventModal modalOpen={modalOpen} setModalOpen={setModalOpen}></EventModal>
+     <EventModal type='Add' modalOpen={modalOpen} setModalOpen={setModalOpen}></EventModal>
      </div>
   )
 }

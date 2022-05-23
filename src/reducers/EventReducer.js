@@ -36,8 +36,40 @@ export const EventSlice = createSlice({
         );
       }
     },
+
+    updateEvent: (state, action) => {
+      const EventList = window.localStorage.getItem('EventList');
+      if (EventList) {
+        const EventListArr = JSON.parse(EventList);
+        EventListArr.forEach((Event) => {
+          if (Event.id === action.payload.id) {
+            Event.status = action.payload.status;
+            Event.names = action.payload.names;
+            Event.username = action.payload.username;
+            Event.tel = action.payload.tel;
+            Event.email = action.payload.email;
+          }
+        }); 
+        window.localStorage.setItem('EventList', JSON.stringify(EventListArr));
+        state.EventList = [...EventListArr];
+      }
+    },
+    deleteEvent:(state,action)=> {
+      const EventList = window.localStorage.getItem('EventList');
+      if (EventList) {
+        const EventListArr = JSON.parse(EventList);
+        EventListArr.forEach((Event, index) => {
+          if (Event.id === action.payload) {
+            EventListArr.splice(index, 1);
+          }
+        });
+        window.localStorage.setItem('EventList', JSON.stringify(EventListArr));
+        state.EventList = EventListArr;
+      }
+    }
   },
+
 });
 
-export const { addEvent} = EventSlice.actions;
+export const { addEvent, deleteEvent, updateEvent} = EventSlice.actions;
 export default EventSlice.reducer;

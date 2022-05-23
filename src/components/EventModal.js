@@ -2,28 +2,50 @@ import React, { useEffect, useState } from 'react';
 import Button from './Button';
 import { v4 as uuid } from 'uuid';
 import toast from 'react-hot-toast';
-import { addEvent} from '../reducers/EventReducer';
+import { addEvent, updateEvent} from '../reducers/EventReducer';
 import { MdOutlineClose } from 'react-icons/md';
 import styles from '../styles/modules/modal.module.scss';
 import { useDispatch } from 'react-redux';
  
 
-function EventModal({ modalOpen, setModalOpen}) {
-    const [name, setName] = useState('');
+function EventModal({type, modalOpen, setModalOpen, Event}) {
+     const dispatch = useDispatch();
+    const [names, setName] = useState('');
     const [username, setUsername] = useState('');
     const [tel, setTel] = useState('');
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState('Not Attending');
-    const dispatch = useDispatch();
+  
+
+    useEffect(()=>{
+      if(type === 'update' && Event) {
+        setName(Event.names);
+        setUsername(Event.username);
+        setTel(Event.tel);
+        setEmail(Event.email);
+        setStatus(Event.status);
+      }else {
+        setName('');
+        setUsername('');
+        setTel('');
+        setEmail('');
+        setStatus('Not Attending');
+      }
+    },[type,Event,modalOpen])
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(name,username,tel,email,status)
-      if (name && username && tel && email && status ) {
+      if(names === '') {
+        toast.error('Please enter a Name');
+        return;
+      }
+      console.log(names,username,tel,email,status)
+      if (names && username && tel && email && status ) {
+        if(type ==='Add') {
           dispatch(
             addEvent({
               id: uuid(),
-              name,
+              names,
               username,
               tel,
               email,
@@ -32,8 +54,24 @@ function EventModal({ modalOpen, setModalOpen}) {
             })
           );
           toast.success('Attendence added successfully');
-          setModalOpen(false)
-      } else {
+         
+      } if(type === 'update') {
+          if (Event.names !== names || Event.status !== status || Event.tel !== tel || Event.email !== email ) {
+             dispatch(updateEvent({
+               ...Event,
+               names,
+               username,
+               tel,
+               email,
+               status,
+             }))
+          } else {
+            toast.error("No Changes Made")
+            return;
+          }
+      }
+      setModalOpen(false)
+    } else {
         toast.error('All Field are Optional')
       }
     };
@@ -51,14 +89,15 @@ function EventModal({ modalOpen, setModalOpen}) {
         </div>
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
               <h1 className={styles.formTitle}>
-                Add Event Attendence
+              {''}
+                {type === 'update' ? 'update' : 'Add'} Event Attendence
               </h1>
               <label htmlFor="title">
                 Name
                 <input
                   type="name"
                   id="name"
-                  value={name}
+                  value={names}
                   onChange={(e) => setName(e.target.value)}
                 
                 />
@@ -80,8 +119,6 @@ function EventModal({ modalOpen, setModalOpen}) {
                   id="phone"
                   value={tel}
                   onChange={(e) => setTel(e.target.value)}
-                
-                  
                 />
               </label>
               <label htmlFor="title">
@@ -103,16 +140,18 @@ function EventModal({ modalOpen, setModalOpen}) {
                 
                 >
                   <option value="Attending">Attending</option>
-                  <option value="Not Attending ">Not Attending</option>
+                  <option value="Not Attending">Not Attending</option>
                 </select>
               </label>
               <div className={styles.buttonContainer}>
                 <Button type="submit" variant="primary">
-                Add Attendence
+                
+                {type === 'update' ? 'update' : 'Add'} Event Attendence 
+                 
                 </Button>
                 <Button variant="secondary"
                 onClick={() => setModalOpen(false)}
-                onKeyDown={() => setModalOpen(false)}  >
+                onKeyDown={() => setModalOpen(false)}>
                   Cancel
                 </Button>
               </div>
