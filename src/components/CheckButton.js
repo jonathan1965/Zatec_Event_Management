@@ -28,7 +28,7 @@ const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
     <motion.div
       className={styles.svgBox}
       variants={boxVariants}
-      animate={checked ? 'checked' : 'unchecked'}
+      animate={checked ? 'unchecked' : 'checked'}
       onClick={()=> {
           setChecked(!checked);
           
@@ -43,7 +43,7 @@ const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
       >
         <motion.path
           variants={checkVariants}
-          animate={checked ? 'checked' : 'unchecked'}
+          animate={checked ? 'unchecked' : 'checked'}
           style={{ pathLength, opacity }}
           fill="none"
           strokeMiterlimit="10"

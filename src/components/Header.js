@@ -1,17 +1,33 @@
 import React from 'react'
 import './Header/Header.css'
-function Header() {
+import { withRouter, Route, Routes, Link} from 'react-router-dom';
+import Homepage from './Homepage';
+
+function Header(props) {
+
   return (
     <nav>
     <input type="checkbox" id="check"/>
-    <label for="check" className="checkbtn">
-    <i class="fas fa-bars"></i>
+    <label forHtml="check" className="checkbtn">
+    <i className="fas fa-bars"></i>
    </label>
+   <div className='Nav-div'>
     <label className="logo" for="">Event-Management</label>
     <ul>
-        <li><span className='Number'>0</span><a className="active" href="">Attending</a></li>
-        <li><span className='Number'>0</span><a href="">Not Attending</a></li>
+         <div>
+            <li><a><Link className='nav-a' to='/homepage' style={{ textDecoration: 'none' }}>Home</Link></a></li>
+            <li><a><Link className='nav-a' to="/" style={{ textDecoration: 'none' }}>Add Attendees</Link></a></li>
+            <li><a><Link  className='nav-a' to="/about" style={{ textDecoration: 'none' }}>About</Link></a></li>
+        </div>
+        <div className='Attend'>
+           
+            <li><span className='Number'>0</span><a><Link className='nav-a nav-aa' to='/' style={{ textDecoration: 'none' }}>Attending</Link></a></li>
+            <li><span className='Number'>0</span><a><Link className='nav-a  nav-aa' to='/' style={{ textDecoration: 'none' }}>Not Attending</Link></a></li>
+        </div>
+       
+        
     </ul>
+    </div>
 </nav>
   )
 } 

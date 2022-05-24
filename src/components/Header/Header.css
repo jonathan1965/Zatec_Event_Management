@@ -21,8 +21,19 @@
   }
   
   nav ul {
-    float: right;
-    margin-right: 20px;
+    display:flex;
+    margin-right: 26px;
+    margin-left:190px;
+   
+  }
+
+  .Attend {
+     margin-left:350px;
+  }
+
+  .Nav-div{
+    display:flex;
+  
   }
   
   nav ul li {
@@ -31,16 +42,21 @@
     margin: 0 5px
   }
   
-  nav ul li a {
+  nav ul li a .nav-a{
     color: white;
     font-size: 17px ;
-    background: #1b9bff;
+    /* background: #1b9bff; */
     padding: 7px 13px ;
     text-transform:  uppercase;
     border-radius: 3px;
   }
   
-  a.active,a:hover{
+   a.active,a:hover{
+    background: #1b9bff;
+    transition: 0.5s;
+  }
+
+  .nav-aa{
     background: #1b9bff;
     transition: 0.5s;
   }
@@ -85,7 +101,7 @@
   
   @media (max-width:858px) {
       .checkbtn {
-          display: block;
+          display: none;
       }
       ul {
           position: fixed;

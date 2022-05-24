@@ -7,9 +7,6 @@ function AppContent() {
   const EventList = useSelector((state)=>state.Event.EventList);
   const sortedEventList = [...EventList];
   sortedEventList.sort((a, b) => new Date(b.time) - new Date(a.time));
-
-
-
   return (
     <div>
     {sortedEventList && sortedEventList.length > 0

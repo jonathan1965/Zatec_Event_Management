@@ -1,28 +1,30 @@
 import './App.css';
 import Header from './components/Header';
-import PageTitle from './components/PageTitle';
 import style from './styles/modules/app.module.scss';
-import AppHeader from './components/AppHeader';
-import AppContent from './components/AppContent';
+import {BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+import MainPage from './components/MainPage';
+import Homepage from './components/Homepage';
+import About from './components/About';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
+    <Router>
     <div>
      <Header/>
-    <div className="container">
-      <PageTitle>Attendence</PageTitle>
-      <div className={style.app__wrapper}>
-        <AppHeader></AppHeader>
-        <AppContent></AppContent>
-      </div>
-    </div>
+     <Routes> 
+     <Route path="/" element={<MainPage/>}/>
+     <Route path="/homepage" element={<Homepage/>}/>
+     <Route path="/about" element={<About/>} />
+     </Routes>
+    
     <Toaster toastOptions={{
       style:{
         fontSize:'1.5rem'
       }}
     }/>
     </div>
+    </Router>
   );
 }
 

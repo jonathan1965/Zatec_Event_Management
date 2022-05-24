@@ -4,7 +4,7 @@ import { getClasses } from '../utils/getClasses';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { deleteEvent } from '../reducers/EventReducer';
-import {updateEvent } from '../reducers/EventReducer';
+import {updateEvent} from '../reducers/EventReducer';
 import toast from 'react-hot-toast';
 import EventModal from './EventModal';
 import CheckButton from './CheckButton';
@@ -49,12 +49,12 @@ function EventItem({Event}) {
       </div>
       <div className={styles.eventActions}>
           <div className={styles.icon}
-           onClick={handleDelete} role='button' tabIndex='{0}'
+           onClick={handleDelete} 
            >
              <MdDelete/>
           </div>
           <div className={styles.icon}
-          onClick={handleUpdate} role='button' tabIndex='{0}'
+          onClick={handleUpdate} 
       
           >
              <MdEdit/>
