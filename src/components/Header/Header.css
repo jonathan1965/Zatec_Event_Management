@@ -12,6 +12,10 @@
     width: 100%;
   }
   
+  label {
+    color:#fff;
+    textDecoration: 'none'
+  }
   label.logo {
    color:white;
    font-size: 35px;
@@ -20,10 +24,14 @@
    font-weight: bold;
   }
   
+  .logo1{
+    color:#fff !important;
+  }
+
   nav ul {
     display:flex;
     margin-right: 26px;
-    margin-left:190px;
+    margin-left:130px;
    
   }
 

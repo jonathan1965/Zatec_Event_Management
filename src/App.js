@@ -4,6 +4,7 @@ import style from './styles/modules/app.module.scss';
 import {BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import Homepage from './components/Homepage';
+import Dashboard from './components/Dashboard';
 import About from './components/About';
 import { Toaster } from 'react-hot-toast';
 
@@ -16,6 +17,7 @@ function App() {
      <Route path="/" element={<MainPage/>}/>
      <Route path="/homepage" element={<Homepage/>}/>
      <Route path="/about" element={<About/>} />
+     <Route path="/dashboard" element={<Dashboard/>} />
      </Routes>
     
     <Toaster toastOptions={{
