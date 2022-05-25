@@ -4,20 +4,20 @@ import EventModal from './EventModal';
 import styles from '../styles/modules/app.module.scss'
 
 function AppHeader() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen,setModalOpen] = useState(false);
   
   return (
     <div>
     <div className={styles.appHeader}>
        
         <Button  variant="primary" onClick={() => setModalOpen(true)}>Create Attendence</Button>
-        <SelectButton>
+        {/* <SelectButton>
         <option value="all">All</option>
         <option value="Attending">Attending</option>
         <option value="Not Attend">Not Attend</option>
-        </SelectButton>
+        </SelectButton> */}
      </div>
-     <EventModal type='Add' modalOpen={modalOpen} setModalOpen={setModalOpen}></EventModal>
+     <EventModal type='Add' modalOpen={modalOpen}  setModalOpen={setModalOpen}></EventModal>
      </div>
   )
 }

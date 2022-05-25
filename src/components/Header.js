@@ -20,9 +20,8 @@ function Header(props) {
             <li><a><Link  className='nav-a' to="/about" style={{ textDecoration: 'none' }}>Contact</Link></a></li>
         </div>
         <div className='Attend'>
-           
-            <li><span className='Number'>0</span><a><Link className='nav-a nav-aa' to='/' style={{ textDecoration: 'none' }}>Attending</Link></a></li>
-            <li><span className='Number'>0</span><a><Link className='nav-a  nav-aa' to='/' style={{ textDecoration: 'none' }}>Not Attending</Link></a></li>
+            <li><span className='Number'>3</span><a><Link className='nav-a nav-aa' to='/' style={{ textDecoration: 'none' }}>Attending</Link></a></li>
+            <li><span className='Number'>4</span><a><Link className='nav-a  nav-aa' to='/' style={{ textDecoration: 'none' }}>Not Attending</Link></a></li>
         </div>
        
         
