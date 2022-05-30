@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import Homepage from './components/Homepage';
 import Dashboard from './components/Dashboard';
+import EventDetails from './components/EventDetails';
 import About from './components/About';
 import { Toaster } from 'react-hot-toast';
 
@@ -18,6 +19,7 @@ function App() {
      <Route path="/homepage" element={<Homepage/>}/>
      <Route path="/about" element={<About/>} />
      <Route path="/dashboard" element={<Dashboard/>} />
+     <Route path="/events/:id" element={<EventDetails/>} />
      </Routes>
     
     <Toaster toastOptions={{
