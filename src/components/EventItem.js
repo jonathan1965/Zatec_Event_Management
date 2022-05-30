@@ -50,7 +50,7 @@ function EventItem({Event}) {
            styles.eventItem,
            Event.status === 'Attending' && styles
            ['eventText--completed'],
-         ])}>{Event.names}</p>
+         ])} style={{ textDecoration: 'none'}}>{Event.names}</p>
          <p className={styles.time} >{Event.tel}</p>
          </Link>
       </div>

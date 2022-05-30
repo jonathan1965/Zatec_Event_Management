@@ -28,7 +28,7 @@ function EventDetails() {
               <div className='website1'>Zatec.co.rw</div>
             </div>
             <div className='right'>
-              <div className='location1'>Zatec, Rw</div>
+              <div className='location1'>{event.status}</div>
             </div>
           </div>
         </div>

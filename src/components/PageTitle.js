@@ -9,3 +9,4 @@ function PageTitle({children, ...rest}) {
 }
 
 export default PageTitle
+
