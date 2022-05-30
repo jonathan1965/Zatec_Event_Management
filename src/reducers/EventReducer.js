@@ -14,6 +14,8 @@ const getInitialEvent = () => {
 const initialValue = {
   filterStatus: 'all',
   EventList: getInitialEvent(),
+  confirmed: 0,
+  nonconfirmed: 0
 };
 
 export const EventSlice = createSlice({

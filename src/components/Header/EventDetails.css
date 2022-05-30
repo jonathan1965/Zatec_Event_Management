@@ -16,8 +16,8 @@
     position: relative;
     line-height: 1.6;
     font-size: 4.5vmin;
-    width: 100vmin;
-    height: 70vmin;
+    width: 80vmin;
+    height: 50vmin;
     padding: 7vmin;
     border-radius: 6px;
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.4);
@@ -40,26 +40,26 @@
     animation-duration: 1s;
   }
   .name1 {
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 700;
     line-height: 1;
   }
   .profession1 {
     color: #FFF;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 0.7em;
     font-weight: 700;
   }
   .bottom {
     display: grid;
-    grid-column: 0.33333333;
-    grid-row: 3;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 0.222222222;
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr;
     align-content: end;
   }
   .bottom .left {
     font-weight: 700;
-    font-size: 0.9em;
+    font-size: 0.8em;
     grid-column: 1;
     animation: inLeft;
     animation-duration: 1s;
@@ -79,7 +79,7 @@
     text-align: right;
     color: #0082e6;
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   .background1 {
     z-index: 1;
@@ -92,14 +92,14 @@
   }
   .slice1 {
     top: -59vmin;
-    left: -1vmin;
+    left: -30vmin;
     position: absolute;
     width: 90vmin;
     height: 150vmin;
     background: #0082e6;
     background: -webkit-linear-gradient(to right, ##0082e6, #cb2d3e);
     background: linear-gradient(to right, ##0082e6, #cb2d3e);
-    transform: rotate(38deg);
+    transform: rotate(39deg);
     animation: inRotate;
     animation-duration: 1s;
   }

@@ -1,9 +1,24 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSelector } from 'react-redux';
 import './Header/home.css'
 
 
 function Homepage() {
+
+  const EventList = useSelector((state)=>state.Event.EventList);
+  console.log ('header props', EventList)
+
+  let attending = 0;
+  let nonattending = 0;
+  EventList.forEach((item)=>{
+    if(item.status === "Attending"){
+      attending = attending + 1;
+    }else{
+      nonattending = nonattending + 1;
+    }
+  })
+  console.log(nonattending, attending)
   return (
       <div className='card-att'>
     <div ClassName="container">
@@ -17,7 +32,7 @@ function Homepage() {
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
               </path>
-            </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">4</span>
+            </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{attending}</span>
             <span
             class="hind-font caption-12 c-dashboardInfo__subInfo">People</span>
         </div>
@@ -30,7 +45,7 @@ function Homepage() {
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
               </path>
-            </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">3</span><span
+            </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{nonattending}</span><span
             class="hind-font caption-12 c-dashboardInfo__subInfo">People</span>
         </div>
       </div>
@@ -42,7 +57,7 @@ function Homepage() {
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
               </path>
-            </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">7</span><span
+            </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count">{attending+nonattending}</span><span
             class="hind-font caption-12 c-dashboardInfo__subInfo">People</span>
         </div>
       </div>
