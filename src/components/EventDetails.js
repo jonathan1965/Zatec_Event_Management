@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from "react-router-dom"
+import './Header/EventDetails.css'
 
 
 function EventDetails() {
@@ -13,13 +14,30 @@ function EventDetails() {
   event = event[0]
 
   return (
-    <div>
-    <p>EventDetails {event.names}</p>
-    <p>EventDetails {event.username}</p>
-    <p>EventDetails {event.tel}</p>
-    <p>EventDetails {event.email}</p>
-    <p>EventDetails {event.status}</p>
-    </div>
+    <div className='boddy'>
+    <div className='business-card1'>
+        <div className='content1'>
+          <div className='top1'>
+            <div className='name1'>{event.username}</div>
+            <div className='profession1'>{event.names}</div>
+          </div>
+          <div className='bottom'>
+            <div className='left'>
+              <div className='email1'>{event.email}</div>
+              <div className='phone1'>{event.tel}</div>
+              <div className='website1'>Zatec.co.rw</div>
+            </div>
+            <div className='right'>
+              <div className='location1'>Zatec, Rw</div>
+            </div>
+          </div>
+        </div>
+        <div className='background1'>
+          <div className='slice1'></div>
+        </div>
+      </div>
+      </div>
+  
   )
 }
 

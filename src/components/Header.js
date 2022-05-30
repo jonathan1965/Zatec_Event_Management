@@ -12,7 +12,7 @@ function Header(props) {
     <i className="fas fa-bars"></i>
    </label>
    <div className='Nav-div'>
-   <label className="logo logo1"><Link to="/dashboard" style={{ textDecoration: 'none', color:'white'  }}>Event-Management</Link></label>
+   <label className="logo logo1"><Link to="/dashboard" style={{ textDecoration: 'none', color:'white' ,background:'none' }}>Event-Management</Link></label>
     <ul>
          <div>
             <li><a><Link className='nav-a' to='/homepage' style={{ textDecoration: 'none' }}>Home</Link></a></li>
