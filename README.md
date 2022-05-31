@@ -1,8 +1,13 @@
-# Social Media Project
+# Event Management System
 
 ### Screenshots
-![image](https://user-images.githubusercontent.com/57622276/165925791-1b72b2e1-6d10-4ca9-a9b2-c8d22997ebc8.png)
-![image](https://user-images.githubusercontent.com/57622276/165925792-0eec084c-809a-48e0-a4d9-c5cedc8e457d.png)
+![Event](https://user-images.githubusercontent.com/57622276/171011739-32b8308e-9a04-4089-b535-480608562241.png)
+![image](https://user-images.githubusercontent.com/57622276/171112375-af03dbfe-3c8a-4c72-98d2-7cf30246aba4.png)
+![image](https://user-images.githubusercontent.com/57622276/171112594-a784121f-9f34-4652-9c63-ca667282fad9.png)
+![image](https://user-images.githubusercontent.com/57622276/171012664-482f208d-fb1e-4464-932a-a57ee0261ae6.png)
+![image](https://user-images.githubusercontent.com/57622276/171012735-ceed35fa-4d4a-4ec5-8f10-273f14e2ba35.png)
+
+
 
 
 ### Install and start

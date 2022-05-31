@@ -47,9 +47,7 @@ function EventItem({Event}) {
       <div className={styles.texts} onClick={handleEventId}>
       <Link to={`/events/${Event.id}`} style={{ textDecoration: 'none' ,background:'none'}}>
          <p className={getClasses([
-           styles.eventItem,
-           Event.status === 'Attending' && styles
-           ['eventText--completed'],
+           styles.eventText
          ])} style={{ textDecoration: 'none'}}>{Event.names}</p>
          <p className={styles.time} >{Event.tel}</p>
          </Link>
